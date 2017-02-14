@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8'>
-    <title>xxxxxxxx</title>
+    <title>CD Organizer</title>
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href=" map to lightbox css">  <!-- ADD THE 3 FOLDERS FROM LIGHTBOX TO VIEWS FOLDER -->
     <link rel="stylesheet" href="css/styles.css">
@@ -13,18 +13,18 @@
     <div class='container'>
       <div class='row'>
         <div class='col-md-4'>
-          <h2>xxxxxxxx xxxxxxxx</h2>
+          <h2>MY CD Organizer</h2>
 
-          <form action='/tasks' method='post'>
+          <form action='/new-cd' method='post'>
             <div class='form-group'>
-              <label for='task'>Enter xxxxxxxx</label>
-              <input type='text' name='task' id='task' class='form-control' placeholder='Personal Slave'>
+              <label for='title'>Enter CD Title</label>
+              <input type='text' name='title' id='title' class='form-control' placeholder='e.g. Aerosmith'>
             </div>
-            <button type='submit' class='btn btn-sm btn-primary'>Submit Task</button>
+            <button type='submit' class='btn btn-sm btn-primary'>Submit CD Title</button>
           </form>
 
           <br>
-          <form action='/delete' method='post'>
+          <form action='/' method='post'>
             <button type='submit' class='btn btn-sm'>Delete All Tasks</button>
           </form>
 
@@ -32,17 +32,16 @@
       </div>  <!-- .row -->
 
       <div class='row'>
-          <div class='col-md-3'>
-              <hr>
-
-              <!-- TWIG STUFF GOES HERE -->
-
-          </div>
+          {% for cd in cds %}
+              <div class='col-md-6 cd cddiv'>
+                  <h4>{{ cd.getTitle }}</h4>
+              </div>
+          {% endfor %}
       </div>  <!-- .row -->
     </div>  <!-- .container -->
 
-    <script src=" go get jQ Google CDN "></script>
+    <!-- <script src=" go get jQ Google CDN "></script>
     <script src=" map to lightbox js"></script>
-    <script src=" go get bootstrap js"></script>
+    <script src=" go get bootstrap js"></script> -->
   </body>
 </html>
