@@ -2,15 +2,22 @@
     class Cd
     {
         private $title;
+        private $artist;
 
-        function __construct($title)
+        function __construct($title, $artist)
         {
             $this->title = $title;
+            $this->artist = $artist;
         }
 
         function getTitle()
         {
             return $this->title;
+        }
+
+        function getArtist()
+        {
+            return $this->artist;
         }
 
         function save()
