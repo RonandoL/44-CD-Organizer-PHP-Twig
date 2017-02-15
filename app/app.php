@@ -22,7 +22,7 @@
 
   // 2. POST INSTANTIATE Route for sending new object (new task) to /new-cd URL
     $app->post('/new-cd', function() use ($app) {
-        $cd = new Cd($_POST['title'], $_POST['artist']);
+        $cd = new Cd(ucwords($_POST['title']), ucwords($_POST['artist']));
         $cd->save();
 
         return $app['twig']->render('cds.html.twig', array('cds' => $_SESSION['list_of_cds']));

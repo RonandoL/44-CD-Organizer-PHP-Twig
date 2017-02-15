@@ -18,7 +18,7 @@
           <form action='/new-cd' method='post'>
             <div class='form-group'>
               <label for='title'>Enter CD Title</label>
-              <input type='text' name='title' id='title' class='form-control' placeholder='e.g. Back in Black'>
+              <input type='text' name='title' id='title' class='form-control' placeholder='e.g. Back in Black' autofocus="">
             </div>
             <div class='form-group'>
               <label for='artist'>Enter Artist</label>
@@ -38,7 +38,7 @@
       <div class='row'>
           {% for cd in cds %}
               <div class='col-md-6 cd cddiv'>
-                  <h4>{{ cd.getTitle }}</h4>
+                  <h4>{{ cd.getTitle }} by {{ cd.getArtist }}</h4>
               </div>
           {% endfor %}
       </div>  <!-- .row -->
