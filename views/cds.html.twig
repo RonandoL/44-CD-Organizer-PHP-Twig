@@ -28,6 +28,10 @@
           </form>
 
           <br>
+          <form action='/artists'>
+            <button type='submit' class='btn btn-sm btn-warning'>List All Artists</button>
+          </form>
+          <br>
           <form action='/' method='post'>
             <button type='submit' class='btn btn-sm'>Delete All Tasks</button>
           </form>
@@ -42,6 +46,15 @@
               </div>
           {% endfor %}
       </div>  <!-- .row -->
+
+      <div class='row'>  <!-- Artists -->
+          {% for artist in artists %}
+              <div class='col-md-6 cd cddiv'>
+                  <h4>{{ artist }}</h4>
+              </div>
+          {% endfor %}
+      </div>  <!-- .row -->
+
     </div>  <!-- .container -->
 
     <!-- <script src=" go get jQ Google CDN "></script>
