@@ -33,26 +33,43 @@
           </form>
           <br>
           <form action='/' method='post'>
-            <button type='submit' class='btn btn-sm'>Delete All Tasks</button>
+            <button type='submit' class='btn btn-sm'>Delete All CDs</button>
           </form>
 
         </div>  <!-- .col-md-3 -->
+        <div class="col-md-4 border">
+            <h3>Artists</h3>
+              <ul>
+                {% for cd in cds %}
+                  <li>{{ cd.getArtist }}</li>
+                {% endfor %}
+              </ul>
+        </div>
+
+        <div class="col-md-4 border">
+            <h3>CD Titles</h3>
+              <ul>
+                {% for cd in cds %}
+                  <li>{{ cd.getTitle }}</li>
+                {% endfor %}
+              </ul>
+        </div>
+
       </div>  <!-- .row -->
 
-      <div class='row'>
-          {% for cd in cds %}
-              <div class='col-md-6 cd cddiv'>
-                  <h4>{{ cd.getTitle }} by {{ cd.getArtist }}</h4>
-              </div>
-          {% endfor %}
+      <div class='row'>  <!-- CD Title & Artist -->
+
       </div>  <!-- .row -->
 
       <div class='row'>  <!-- Artists -->
-          {% for artist in artists %}
-              <div class='col-md-6 cd cddiv'>
-                  <h4>{{ artist }}</h4>
-              </div>
-          {% endfor %}
+        <h3>xxxxxx</h3>
+            <ul>
+              <div class='col-md-6 cd '>
+                  {% for artist in artists %}
+                      <li>{{ artist.getArtist }}</li>
+              {% endfor %}
+            </ul>
+          </div>
       </div>  <!-- .row -->
 
     </div>  <!-- .container -->
