@@ -37,40 +37,32 @@
           </form>
 
         </div>  <!-- .col-md-3 -->
-        <div class="col-md-4 border">
+        <div class="col-md-8">
+          <div class="col-md-6 border">
             <h3>Artists</h3>
+            <p><i>click artist to see all of their CDs</i></p>
               <ul>
                 {% for cd in cds %}
-                  <li>{{ cd.getArtist }}</li>
+                  <li>
+                    <form action='/xxx' method='post'>
+                      <button type='submit' class='button' value='{{ cd.getArtist }}'>{{ cd.getArtist }}</button>
+                    </form>
+                  </li>
                 {% endfor %}
               </ul>
-        </div>
-
-        <div class="col-md-4 border">
-            <h3>CD Titles</h3>
-              <ul>
-                {% for cd in cds %}
-                  <li>{{ cd.getTitle }}</li>
-                {% endfor %}
-              </ul>
-        </div>
-
-      </div>  <!-- .row -->
-
-      <div class='row'>  <!-- CD Title & Artist -->
-
-      </div>  <!-- .row -->
-
-      <div class='row'>  <!-- Artists -->
-        <h3>xxxxxx</h3>
-            <ul>
-              <div class='col-md-6 cd '>
-                  {% for artist in artists %}
-                      <li>{{ artist.getArtist }}</li>
-              {% endfor %}
-            </ul>
           </div>
+          <div class="col-md-6 border">
+              <h3>CD Titles</h3>
+                <ul>
+                  {% for cd in cds %}
+                    <li>{{ cd.getTitle }}</li>
+                  {% endfor %}
+                </ul>
+          </div>
+
+        </div>
       </div>  <!-- .row -->
+
 
     </div>  <!-- .container -->
 

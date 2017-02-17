@@ -30,15 +30,12 @@
 
     // LIST ARTISTS
     $app->get('/artists', function() use ($app) {
-        $_SESSION['list_of_artists'] = array();
-        
-        return $app['twig']->render('cds.html.twig', array('artists' => $_SESSION['list_of_cds']));
+        return $app['twig']->render('cds.html.twig', array('cds' => $_SESSION['list_of_cds']));
     });
 
     // LIST TITLES FOR ONE ARTIS
-    $app->post('/artists-titles', function() use ($app) {
-      dddd
-      return $app['twig']->render('cds.html.twig', array('artists-titles' => $_SESSION['list_of_cds']))
+    $app->post('/xxx', function() use ($app) {
+        return $app['twig']->render('cds.html.twig', array('cds' => $_SESSION['list_of_cds']));
     });
 
     // 3. Route for deleting all tasks
